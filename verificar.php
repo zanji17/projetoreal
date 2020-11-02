@@ -1,0 +1,9 @@
+<?php
+    session_start();
+    if($_SESSION["tipo"]=="cliente"){
+        header('location:pedidosbd.php');
+    }
+    else{
+        header('location:home2.php');
+    }
+?>
