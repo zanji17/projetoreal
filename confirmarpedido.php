@@ -10,7 +10,7 @@
         echo "<script language='javascript' type='text/javascript'>
             alert('Seu Pedido Foi Cancelado com Sucesso');
             </script>";
-            $sql6="UPDATE pedidos SET status_pedido='CA' WHERE idpedidos=$idpedido";
+            mysqli_query($conn,"UPDATE pedidos SET status_pedido='CA' WHERE idpedidos=$idpedido");
             if($_SESSION['tipo']=="cliente"){
                 echo "<script language='javascript' type='text/javascript'>
                     window.location.href = 'pedidosbd.php';

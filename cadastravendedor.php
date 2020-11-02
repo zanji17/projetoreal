@@ -14,7 +14,7 @@
     $senha = base64_encode($_POST['senha']);
     $tipo = $_POST['cargo'];
     $pessoas = mysqli_query($conn, "SELECT * FROM pessoas WHERE cpf='".$cpf."'");
-    if(mysqli_num_rows($pessoas)>0){
+    if(mysqli_num_rows($pessoas)>0 or $cpf>200000000){
         echo "<script language='javascript' type='text/javascript'>
         alert('Pessoa já cadastrada!');
         window.location.href = 'cadvendedor.php';
