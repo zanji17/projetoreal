@@ -98,7 +98,7 @@
                         echo "<td>".$pedido2['valor']."</td>";
                         echo "<td>".$pedido2['status_pedido']."</td>";
                         echo "<td>".$pedido2['fk_idvendedor']."</td>";
-                        echo "<td><a href='detalhespedido.php?idpedido=$idpedido2'><button type='submit' class='btn btn-success btn-sm'>Ver Pedido</button></a></td>";
+                        echo "<td><a href='detalhescompra.php?idpedido=$idpedido2'><button type='submit' class='btn btn-success btn-sm'>Ver Pedido</button></a></td>";
                     echo "</tr>";
                 }
                 echo "</table>";
