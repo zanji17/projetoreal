@@ -45,7 +45,7 @@
                             ?>
                             <div>
                                 <div>
-                                    <form class="form" action="produto.php" method="post">
+                                    <form class="form" action="produtos.php" method="post">
                                     <input class="form-control input-lg" type="text" name="procura" placeholder="digite a descrição do produto">
                                     <input type="submit" name="Procurar" value="Buscar" class="btn btn-outline-warning">
                                 </div>
@@ -129,7 +129,7 @@
                 }
             }
             echo "<div class='p-2 mb-0 bg-dark text-light'>";
-                echo "<h4 style='text-align:center; font-size:14px;'>Produtos à venda</h4>";
+                echo "<h4 style='text-align:center; font-size:14px;'>Produtos em Estoque</h4>";
             echo "</div>";
             echo "<table class='mb-0 table table-striped table-dark' style='text-align:center;font-size:13px;'>";
                 echo "<tr>";
