@@ -31,13 +31,13 @@
     if(mysqli_query($conn,$sql3)){
         echo "<script language='javascript' type='text/javascript'>
            alert('Desconto Realizado com Sucesso!');
-           window.location.href = 'detalhespedido.php?idpedido=$idpedido';
+           window.location.href = 'detalhescompra.php?idpedido=$idpedido';
            </script>";
     }
     else{
         echo "<script language='javascript' type='text/javascript'>
             alert('Desconto não foi Realizado com Sucesso!');
-            window.location.href = 'detalhespedido.php?idpedido=$idpedido';
+            window.location.href = 'detalhescompra.php?idpedido=$idpedido';
             </script>";
     }
     mysqli_close($conn);
