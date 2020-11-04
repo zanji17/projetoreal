@@ -15,10 +15,10 @@
         <link rel="shortcut icon" href="img/logo.jpg" type="image/x-icon"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
-    <body style="background-image:url('img/background.jpg');">
+    <body>
         <header><div class="p-1 mb-0 bg-dark text-light "><div class="col-md-4 col-md-offset-4">Controle de Pedidos de Vendas 1.0</div></div></header>
         <div class="container;">
-        <nav>
+        <nav style="background-image:url('img/background.jpg');">
                 <div class="p-4 mb-2" style="background-color:seagreen;color:black; opacity:0.75">
                         <div class="box float-left" style="width:50%;">
                             <div class="form-group"> 
@@ -45,7 +45,7 @@
         </nav>
         <section>
             <div class="counteiner" style="width: 100vw,100px; height: 120vh; display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                <div class="box rounded" style="background-color:black; opacity:85%; padding:30px;">
+                <div class="box rounded" style="background-color:#005000; opacity:85%; padding:30px;">
                     <div style="width:400px; color:white;">
                         <h4 style="text-align:center;">Cadastro de Vendedor</h4>
                         <form name="usuario" id="cadvendedor" action="cadastravendedor.php" method="post">
@@ -76,7 +76,7 @@
                                 <option value="vendedor">Vendedor</option>
                             </select>
                             <br/>
-                            <input type="submit" value="Cadastrar" class="btn btn-outline-success">
+                            <input type="submit" value="Cadastrar" class="btn btn-outline-light">
                         </form>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
         <div class="p-2 mb-2">    
         </div>
         <footer>
-            <div style="position:fixed; left: 0; bottom: 0; width: 100%; background-color: #191970; color: white; text-align: center;">TDS03-SENAI 2020</div>
+            <div style="position:fixed; left: 0; bottom: 0; width: 100%; background-color: darkgreen; color: white; text-align: center;">TDS03-SENAI 2020</div>
         </footer>
     </body>
 </html>

@@ -27,7 +27,7 @@
                 $sql3 = mysqli_query($conn, "SELECT * FROM usuarios WHERE fk_idpessoas=$fkpessoa");
                 $usuario = mysqli_fetch_array($sql3);
             ?>
-            <div class="box rounded" style="background-color:black; opacity:85%; padding:30px;">
+            <div class="box rounded" style="background-color:#005000; opacity:85%; padding:30px;">
                 <div style="width:400px; color:white;">
                     <h4 style="text-align:center;">Atualizar Perfil</h4>
                     <form name="editarcliente" id="editarcliente" action="editarclientebd.php?idcliente=<?php echo $cliente['idcliente']; ?>" method="post">
@@ -49,7 +49,7 @@
                     <label>Senha</label>
                     <input type="password" name="senha" placeholder="Digite sua senha" value="<?php echo base64_decode($usuario['senha']); ?>" class="form-control form-control-sm" required>
                     <br/>
-                    <input type="submit" value="Atualizar" class="btn btn-outline-success">
+                    <input type="submit" value="Atualizar" class="btn btn-outline-light">
                 </div>
             </div>
         </section>

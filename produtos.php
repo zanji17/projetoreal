@@ -15,9 +15,9 @@
         <link rel="shortcut icon" href="img/logo.jpg" type="image/x-icon"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
-    <body style="background-image:url('img/background.jpg');">
+    <body>
         <header><div class="p-1 mb-0 bg-dark text-light "><div class="col-md-4 col-md-offset-4">Controle de Pedidos de Vendas 1.0</div></div></header>
-        <div class="container;">
+        <div class="container;" style="background-image:url('img/background.jpg');">
         <nav>
                 <div class="p-4 mb-2" style="background-color:seagreen;color:black; opacity:0.75">
                         <div class="box float-left" style="width:50%;">
@@ -88,16 +88,16 @@
                     $letra = mysqli_query($conn, "SELECT DISTINCT LEFT(descricao, 1) AS letra from produtos ORDER BY letra");
                     while($letras = mysqli_fetch_array($letra)){
                         $inicial = strtoupper($letras['letra']);
-                        echo '<button type="submit" value="'.$inicial.'" name="letra" class="btn btn-dark"><b>'.$inicial.'</b></button>|';
+                        echo '<button type="submit" value="'.$inicial.'" name="letra" class="btn btn-secondary"><b>'.$inicial.'</b></button>';
                     }
                 ?>
                 </div>
             </div>
-            <div class='p-1 mb-0 bg-secondary text-light'>
+            <div class="p-1 mb-0 text-dark" style="background-color:lightgreen">
                 <label>Ordenar Por:</label>
-                <button type=submit name="id" class="btn btn-dark btn-sm">Nº do Produto</button>
-                <button type=submit name="descricao" class="btn btn-dark btn-sm">descricao</button>
-                <button type=submit name="valor" class="btn btn-dark btn-sm">Valor</button>
+                <button type=submit name="id" class="btn btn-secondary btn-sm">Nº do Produto</button>
+                <button type=submit name="descricao" class="btn btn-secondary btn-sm">descricao</button>
+                <button type=submit name="valor" class="btn btn-secondary btn-sm">Valor</button>
             </div>
             </form>
             <?php
@@ -128,10 +128,10 @@
                 $sql = mysqli_query($conn, "SELECT * FROM produtos WHERE descricao LIKE '".$procura."%' ORDER BY descricao LIMIT $inicial,$registros");
                 }
             }
-            echo "<div class='p-2 mb-0 bg-dark text-light'>";
+            echo "<div class='p-2 mb-0 bg-success text-light'>";
                 echo "<h4 style='text-align:center; font-size:14px;'>Produtos em Estoque</h4>";
             echo "</div>";
-            echo "<table class='mb-0 table table-striped table-dark' style='text-align:center;font-size:13px;'>";
+            echo "<table class='mb-0 table table-bordered' style='text-align:center;font-size:13px;background-color:lightgray'>";
                 echo "<tr>";
                     echo "<th>Nº de Registro</th>";
                     echo "<th>Descrição</th>";
@@ -154,14 +154,14 @@
                         echo "<td><form action='attprodutos.php?idproduto=$idproduto' method='post' class='form-inline' style='font-size:14px;'>
                         <div class='form-group mx-sm-2 mb-1'>
                             <input type=number name=attestoque value=0 class='form-control form-control-sm' style='width:20%'>
-                            <input type='submit' value='Atualizar' class='btn btn-success btn-sm mb-0'>    
-                            <button type='submit' name='status_produto' value='A' class='btn btn-primary btn-sm mb-0'>Ativar</button>
-                        <button type='submit' name='status_produto' value='I' class='btn btn-danger btn-sm mb-0'>Inativar</button></td>
+                            <input type='submit' value='Atualizar' class='btn btn-primary btn-sm mb-0'>    
+                            <button type='submit' name='status_produto' value='A' class='btn btn-warning btn-sm mb-0'>Ativar</button>
+                        <button type='submit' name='status_produto' value='I' class='btn btn-warning btn-sm mb-0'>Inativar</button></td>
                         </div>
                         </form>";
-                        echo "<td><a href='produtos.php?idproduto=$idproduto'><button class='btn btn-light btn-sm mb-1'>Editar</button></a></td>";
+                        echo "<td><a href='produtos.php?idproduto=$idproduto'><button class='btn btn-secondary btn-sm mb-1'>Editar</button></a></td>";
                         if($_SESSION['tipo']=="gerente"){
-                            echo "<td><a href='apagarproduto.php?idproduto=$idproduto'><button class='btn btn-dark btn-sm mb-1' style='color:red;'>X</button></a></td>";
+                            echo "<td><a href='apagarproduto.php?idproduto=$idproduto'><button class='btn btn-danger btn-sm mb-1' style='color:white;'>X</button></a></td>";
                         }
                     echo "</tr>";
                 }   
@@ -190,7 +190,7 @@
                                 }
                             }
                             if((!isset($_POST['valor']) and !isset($_POST['descricao']) and !isset($_POST['letra']) and (!isset($_POST['procura']) or $_POST['procura']==null)) or isset($_POST['id'])){
-                                echo "<button type=submit name='id' class='btn btn-dark'>$i</button>";
+                                echo "<button type=submit name='id' class='btn btn-secondary'>$i</button>";
                             }
                         echo "</form></td>";
                      }
@@ -211,7 +211,7 @@
         </section>
     </div>
         <footer>
-            <div style="position:fixed; left: 0; bottom: 0; width: 100%; background-color: #191970; color: white; text-align: center;">TDS03-SENAI 2020</div>
+            <div style="position:fixed; left: 0; bottom: 0; width: 100%; background-color: darkgreen; color: white; text-align: center;">TDS03-SENAI 2020</div>
         </footer>
     </body>
 </html>

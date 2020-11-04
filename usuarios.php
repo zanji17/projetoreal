@@ -15,10 +15,10 @@
         <link rel="shortcut icon" href="img/logo.jpg" type="image/x-icon"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
-    <body style="background-image:url('img/background.jpg');">
+    <body>
         <header><div class="p-1 mb-0 bg-dark text-light "><div class="col-md-4 col-md-offset-4">Controle de Pedidos de Vendas 1.0</div></div></header>
         <div class="container;">
-        <nav>
+        <nav style="background-image:url('img/background.jpg');">
                 <div class="p-4 mb-2" style="background-color:seagreen;color:black; opacity:0.75">
                         <div class="box float-left" style="width:50%;">
                             <div class="form-group"> 
@@ -60,18 +60,18 @@
                     $letra = mysqli_query($conn, "SELECT DISTINCT LEFT(nome, 1) AS letra from pessoas ORDER BY letra");
                     while($letras = mysqli_fetch_array($letra)){
                         $inicial = strtoupper($letras['letra']);
-                        echo '<button type="submit" value="'.$inicial.'" name="letra" class="btn btn-danger" style="color:black;"><b>'.$inicial.'</b></button>';
+                        echo '<button type="submit" value="'.$inicial.'" name="letra" class="btn btn-secondary"><b>'.$inicial.'</b></button>';
                     }
                     ?>
                 </div>
             </div>
-            <div class='p-1 mb-0 bg-danger text-light'>
+            <div class="p-1 mb-0 text-dark" style="background-color:lightgreen">
                 <label>Ordenar Por:</label>
-                <button type=submit name="id" class='btn btn-dark btn-sm'>Nº de Registro</button>
-                <button type=submit name="nome" class='btn btn-dark btn-sm'>Nome</button>
-                <button type=submit name="cpf" class='btn btn-dark btn-sm'>CPF</button>
-                <button type=submit name="status_pessoas" value="A" class='btn btn-dark btn-sm'>Apenas Ativos</button>
-                <button type=submit name="status_pessoas" value="I" class='btn btn-dark btn-sm'>Apenas Inativos</button>
+                <button type=submit name="id" class='btn btn-secondary btn-sm'>Nº de Registro</button>
+                <button type=submit name="nome" class='btn btn-secondary btn-sm'>Nome</button>
+                <button type=submit name="cpf" class='btn btn-secondary btn-sm'>CPF</button>
+                <button type=submit name="status_pessoas" value="A" class='btn btn-secondary btn-sm'>Apenas Ativos</button>
+                <button type=submit name="status_pessoas" value="I" class='btn btn-secondary btn-sm'>Apenas Inativos</button>
             </div>
             </form>
             <?php
@@ -132,10 +132,10 @@
                     $sql=mysqli_query($conn,"SELECT * FROM pessoas INNER JOIN usuarios ON pessoas.idpessoas=usuarios.fk_idpessoas WHERE nome LIKE '".$procura."%' or cpf LIKE '".$procura."%' ORDER BY nome LIMIT $inicial,$registros");
                 }
             }
-            echo "<div class='p-2 mb-0 bg-danger text-dark' style='opacity:90%;'>";
+            echo "<div class='p-2 mb-0 bg-success text-light' style='opacity:90%;'>";
                 echo "<h4 style='text-align:center;'>Registro de Usuários</h4>";
             echo "</div>";
-            echo "<table class='mb-0 table table-bordered table-light' style='opacity:90%;'>";
+            echo "<table class='mb-0 table table-bordered' style='opacity:90%;background-color:lightgray'>";
             echo "<tr>";
                 echo "<th>NºRegistro</th>";
                 echo "<th>Nome</th>";
@@ -173,27 +173,27 @@
                         for($i = 1; $i <  $numpaginas + 1; $i++){
                             echo "<td><form action='usuarios.php?pagina=$i' method='post'>";
                                 if(isset($_POST['nome'])){
-                                    echo "<button type=submit name='nome' class='btn btn-danger' style='color:black;'>$i</button>";
+                                    echo "<button type=submit name='nome' class='btn btn-secondary'>$i</button>";
                                 }
                                 if(isset($_POST['cpf'])){
-                                    echo "<button type=submit name='cpf' class='btn btn-danger' style='color:black;'>$i</button>";
+                                    echo "<button type=submit name='cpf' class='btn btn-secondary'>$i</button>";
                                 }
                                 if(isset($_POST['letra'])){
                                     $letra=$_POST['letra'];
-                                    echo "<button type=submit name='letra' value=$letra class='btn btn-danger' style='color:black;'>$i</button>";
+                                    echo "<button type=submit name='letra' value=$letra class='btn btn-secondary'>$i</button>";
                                 }
                                 if(isset($_POST['procura'])){
                                     if($_POST['procura']!=null){
                                         $procura=$_POST['procura'];
-                                        echo "<button type=submit name='procura' value='$procura' class='btn btn-danger' style='color:black;'>$i</button>";
+                                        echo "<button type=submit name='procura' value='$procura' class='btn btn-secondary'>$i</button>";
                                     }
                                 }
                                 if(isset($_POST['status_pessoas'])){
                                     $status_pedido=$_POST['status_pessoas'];
-                                    echo "<button type=submit name='status_pedido' value='$status_pedido' class='btn btn-danger' style='color:black;'>$i</button>";
+                                    echo "<button type=submit name='status_pedido' value='$status_pedido' class='btn btn-secondary'>$i</button>";
                                 }
                                 if((!isset($_POST['nome']) and !isset($_POST['cpf']) and !isset($_POST['status_pessoas']) and !isset($_POST['letra']) and (!isset($_POST['procura']) or $_POST['procura']==null)) or isset($_POST['id'])){
-                                    echo "<button type=submit name='id' class='btn btn-danger' style='color:black;'>$i</button>";
+                                    echo "<button type=submit name='id' class='btn btn-secondary'>$i</button>";
                                 }
                             echo "</form></td>";
                         }
@@ -206,7 +206,7 @@
             </div>      
         </section>
         <footer>
-        <div style="position:fixed; left: 0; bottom: 0; width: 100%; background-color: #191970; color: white; text-align: center;">TDS03-SENAI 2020</div>
+        <div style="position:fixed; left: 0; bottom: 0; width: 100%; background-color: darkgreen; color: white; text-align: center;">TDS03-SENAI 2020</div>
         </footer>
     </body>
 </html>

@@ -186,7 +186,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`idusuarios`, `login`, `senha`, `tipo`, `fk_idpessoas`) VALUES
 (2, 'teste1', 'dGVzdGUx', 'gerente', 84),
-(3, 'teste2', 'dGVzdGUy', 'vendedor', 85),
+(3, 'teste2', 'dGVzdGUy', 'gerente', 85),
 (7, 'teste', 'dGVzdGU=', 'cliente', 90),
 (9, 'felipe', 'ZmVsaXBl', 'cliente', 92),
 (10, 'lucas', 'bHVjYXM=', 'cliente', 93),

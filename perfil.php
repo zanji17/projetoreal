@@ -15,10 +15,10 @@
         <link rel="shortcut icon" href="img/logo.jpg" type="image/x-icon"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
-    <body style="background-image:url('img/background.jpg');">
+    <body>
         <header><div class="p-1 mb-0 bg-dark text-light "><div class="col-md-4 col-md-offset-4">Controle de Pedidos de Vendas 1.0</div></div></header>
         <div class="container;">
-        <nav>
+        <nav style="background-image:url('img/background.jpg');">
                 <div class="p-4 mb-2" style="background-color:seagreen;color:black; opacity:0.75">
                         <div class="box float-left" style="width:50%;">
                             <div class="form-group"> 
@@ -61,7 +61,7 @@
             echo "<div class='p-2 mb-0 bg-success text-light' style='opacity:90%;'>";
                 echo "<h4 style= text-align:center;font-size:14px;'>Informações de Usuário</h4>";
             echo "</div>";
-            echo "<table class='mb-0 table table-bordered table-light' style='opacity:90%;text-align:center;font-size:14px;'>";
+            echo "<table class='mb-0 table table-bordered' style='opacity:90%;text-align:center;font-size:14px; background-color: lightgray'>";
                 echo "<tr>";
                     echo "<th>Nome</th>";
                     echo "<th>CPF</th>";
@@ -95,14 +95,14 @@
                     if($tipo=="cliente"){
                         $idcliente = $pessoa['idcliente'];
                         $_SESSION['idcliente']=$idcliente;
-                        echo "<td><a href='pedidosbd.php'><button type='submit' class='btn btn-success btn-sm'>Criar Pedido</button><a></td>";
+                        echo "<td><a href='pedidosbd.php'><button type='submit' class='btn btn-primary btn-sm'>Criar Pedido</button><a></td>";
                     }
                 echo "</tr>";
                 echo "</table>";
                 if($tipo=="cliente"){
                     $idcliente=$pessoa['idcliente'];
-                    echo "<div class='p-1 mb-0 bg-dark text-light' style='opacity:90%;font-size:14px;'>";
-                        echo "<form action='creditos.php?idcliente=$idcliente' method='post'><input type=decimal name='credito' value=0><input type=submit value='Atualizar Crédito'></form>";
+                    echo "<div class='p-1 mb-0 bg-light text-light' style='opacity:90%;font-size:14px;'>";
+                        echo "<form action='creditos.php?idcliente=$idcliente' method='post'><input type=decimal name='credito' value=0 class='border border-dark'><input type=submit value='Atualizar Crédito' class='btn btn-warning btn-sm'></form>";
                     echo "</div>";
                 }
                 echo "<br/>";
@@ -114,7 +114,7 @@
                     $idvendedor = $pessoa['idvendedor'];
                     $sql3=mysqli_query($conn, "SELECT * FROM pedidos WHERE fk_idvendedor=$idvendedor ORDER BY data_pedido DESC");
                 }
-                echo "<div class='p-1 mb-0 bg-primary text-light' style='opacity:90%; text-align:center'>";
+                echo "<div class='p-1 mb-0 bg-success text-light' style='opacity:90%; text-align:center'>";
                     if($tipo=="cliente"){
                         echo "<h4 style='font-size:14px;'>Histórico de Compras</h4>";
                     }
@@ -122,7 +122,7 @@
                         echo "<h4 style='font-size:14px;'>Histórico de Vendas</h4>";
                     }
                 echo "</div>";
-                echo "<table class='table table-bordered table-light' style='opacity:90%;font-size:14px;text-align:center';>";
+                echo "<table class='table table-bordered' style='opacity:90%;font-size:14px;text-align:center;background-color: lightgray'>";
                     echo "<tr>";
                         echo "<th>NºPedido</th>";
                         echo "<th>Data do Pedido</th>";
@@ -141,7 +141,7 @@
                             echo "<td>".$pedido['fk_idcliente']."</td>";
                             echo "<td>".$pedido['fk_idvendedor']."</td>";
                             echo "<td>".$pedido['status_pedido']."</td>";
-                            echo "<td><a href='detalhescompra.php?idpedido=$idpedido'><button type='submit' class='btn btn-primary btn-sm'>Detalhes da Compra</button></a></td>";
+                            echo "<td><a href='detalhescompra.php?idpedido=$idpedido'><button type='submit' class='btn btn-secondary btn-sm'>Detalhes da Compra</button></a></td>";
                         echo "</tr>";
                     }
                 echo "</table>";
@@ -164,7 +164,7 @@
             </div>
         </section>      
         <footer>
-            <div style="position:fixed; left: 0; bottom: 0; width: 100%; background-color: #191970; color: white; text-align: center;">TDS03-SENAI 2020</div>
+            <div style="position:fixed; left: 0; bottom: 0; width: 100%; background-color: darkgreen; color: white; text-align: center;">TDS03-SENAI 2020</div>
         </footer>
     </body>
 </html>

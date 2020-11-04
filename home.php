@@ -15,10 +15,10 @@
         <link rel="shortcut icon" href="img/logo.jpg" type="image/x-icon"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
-    <body style="background-image:url('img/background.jpg');">
+    <body>
         <header><div class="p-1 mb-0 bg-dark text-light "><div class="col-md-4 col-md-offset-4">Controle de Pedidos de Vendas 1.0</div></div></header>
         <div class="container;">
-        <nav>
+        <nav style="background-image:url('img/background.jpg');">
                 <div class="p-4 mb-2" style="background-color:seagreen;color:black; opacity:0.75">
                         <div class="box float-left" style="width:50%;">
                             <div class="form-group"> 
@@ -77,15 +77,15 @@
                        $letra = mysqli_query($conn, "SELECT DISTINCT LEFT(descricao, 1) AS letra from produtos ORDER BY letra");
                        while($letras = mysqli_fetch_array($letra)){
                            $inicial = strtoupper($letras['letra']);
-                           echo '<button type="submit" value="'.$inicial.'" name="letra" class="btn btn-dark"><b>'.$inicial.'</b></button>';
+                           echo '<button type="submit" value="'.$inicial.'" name="letra" class="btn btn-secondary"><b>'.$inicial.'</b></button>';
                        }
                    ?>
                </div>
            </div>
-               <div class='p-1 mb-0 bg-secondary text-light'>
+               <div class="p-1 mb-0 text-dark" style="background-color: lightgreen">
                    <label>Ordenar Por:</label>
-                   <button type=submit name="descricao" class="btn btn-dark btn-sm">Descrição</button>
-                   <button type=submit name="valor" class="btn btn-dark btn-sm">Valor</button>
+                   <button type=submit name="descricao" class="btn btn-secondary btn-sm">Descrição</button>
+                   <button type=submit name="valor" class="btn btn-secondary btn-sm">Valor</button>
                </div>
                </form>
            <?php
@@ -139,10 +139,10 @@
                    }
                }
                echo "<div>";
-                   echo "<div class='p-2 mb-0 bg-dark text-light'>";
+                   echo "<div class='p-2 mb-0 bg-success text-light'>";
                        echo "<h4 style='text-align:center;'>Produtos à venda</h4>";
                    echo "</div>";
-                   echo "<table class='table table-striped table-dark' style='text-align:center;'>";
+                   echo "<table class='table table-bordered text-dark' style='text-align:center;background-color: lightgray'>";
                         echo "<tr>";
                             echo "<th>Descrição</th>";
                             echo "<th>Quantidade</th>";
@@ -157,9 +157,9 @@
                                 echo "<td>".$produto['valor']."</td>";
                                 echo "<td><form name=idpedido id=idpedido action='addproduto.php?idprodutos=$idproduto' method='post' class='form-inline'>
                                 <div class='form-group mx-sm-2 mb-1'>
-                                <input type=number name='qtde' placeholder=0 value=0 class='form-control form-control-sm'>
+                                <input type=number name='qtde' placeholder=0 value=0 class='form-control form-control-sm border border-dark'>
                                 </div>
-                                <input type='submit' value='Adicionar ao Pedido' class='btn btn-light btn-sm mb-1'></td></form>";
+                                <input type='submit' value='Adicionar ao Pedido' class='btn btn-primary btn-sm mb-1'></td></form>";
                             echo "</tr>";
                         }
                     echo "</table>";
@@ -201,7 +201,7 @@
             </div>      
         </section>
         <footer>
-        <div style="position:fixed; left: 0; bottom: 0; width: 100%; background-color: #191970; color: white; text-align: center;">TDS03-SENAI 2020</div>
+        <div style="position:fixed; left: 0; bottom: 0; width: 100%; background-color: darkgreen; color: white; text-align: center;">TDS03-SENAI 2020</div>
         </footer>
     </body>
 </html>

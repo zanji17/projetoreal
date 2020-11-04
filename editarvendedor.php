@@ -26,7 +26,7 @@
                 $sql2 = mysqli_query($conn,"SELECT * FROM pessoas INNER JOIN usuarios ON pessoas.idpessoas=usuarios.fk_idpessoas WHERE idpessoas=$idpessoa");
                 $usuario = mysqli_fetch_array($sql2);
                 ?>
-                <div class="box rounded" style="background-color:black; opacity:85%; padding:30px;">
+                <div class="box rounded" style="background-color: #005000; opacity:85%; padding:30px;">
                 <div style="width:400px; color:white;">
                     <h4 style="text-align:center;">Atualizar Perfil</h4>
                 <form name="usuario" id="cadvendedor" action="editarvendedorbd.php?idvendedor=<?php echo $idvendedor;?>" method="post">
@@ -54,7 +54,7 @@
                     <option value="vendedor">Vendedor</option>
                 </select>
                 <br/>
-                <input type="submit" value="Atualizar" class="btn btn-outline-success">
+                <input type="submit" value="Atualizar" class="btn btn-outline-light">
             </div>
         </section>
     </body>

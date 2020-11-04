@@ -22,9 +22,9 @@
             $produto = mysqli_fetch_array($sql);
             ?>
             <div>
-            <div class="box border border-primary rounded" style="background-color:orange; opacity:85%; padding:30px;">
+            <div class="box border border-primary rounded" style="background-color: #005000; opacity:85%; padding:30px;">
                     <div style="width:400px; color:white;">
-                        <h4 style="text-align:center; color:black">Atualizar Produto</h4>
+                        <h4 style="text-align:center; color:white">Atualizar Produto</h4>
                 <form name="produto" id="cadproduto" action="editarprodutobd.php?idproduto=<?php echo $idproduto; ?>" method="post">
                     <div class="form-group row"> 
                         <label class="col-sm-2 col-form-label">Descrição</label>
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <br/>
-                    <input type="submit" value="Atualizar" class="btn btn-outline-dark">
+                    <input type="submit" value="Atualizar" class="btn btn-outline-light">
                 </form>
             </div>
         </section>
