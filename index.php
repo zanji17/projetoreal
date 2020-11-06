@@ -12,7 +12,7 @@
             <div class="p-4 mb-0" style="background-color:seagreen;color:black; opacity:0.75">
                     <div class="box float-left" style="width:50%;">
                         <div class="form-group"> 
-                        <h2><img src="img/logo.jpg" width=8% height=8%>
+                        <h2><img src="img/logo.jpg" width=15% height=15%>
                         Loja Improvisada</h2>
                         </div>
                     </div>

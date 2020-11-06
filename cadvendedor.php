@@ -22,7 +22,7 @@
                 <div class="p-4 mb-2" style="background-color:seagreen;color:black; opacity:0.75">
                         <div class="box float-left" style="width:50%;">
                             <div class="form-group"> 
-                            <h2><img src="img/logo.jpg" width=8% height=8%>
+                            <h2><img src="img/logo.jpg" width=15% height=15%>
                             Loja Improvisada</h2>
                             </div>
                         </div>
@@ -39,12 +39,12 @@
                             include("menu.php");
                         ?>
                         </div>
-                        <div class="p-4 mb-2">
+                        <div class="p-4 mb-4">
                         </div>
                 </div>
         </nav>
         <section>
-            <div class="counteiner" style="width: 100vw,100px; height: 120vh; display: flex; flex-direction: row; justify-content: center; align-items: center;">
+            <div class="counteiner" style="width: 100vw; height: 120vh; display: flex; flex-direction: row; justify-content: center; align-items: center;">
                 <div class="box rounded" style="background-color:#005000; opacity:85%; padding:30px;">
                     <div style="width:400px; color:white;">
                         <h4 style="text-align:center;">Cadastro de Vendedor</h4>

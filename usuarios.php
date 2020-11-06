@@ -22,7 +22,7 @@
                 <div class="p-4 mb-2" style="background-color:seagreen;color:black; opacity:0.75">
                         <div class="box float-left" style="width:50%;">
                             <div class="form-group"> 
-                            <h2><img src="img/logo.jpg" width=8% height=8%>
+                            <h2><img src="img/logo.jpg" width=15% height=15%>
                             Loja Improvisada</h2>
                             </div>
                         </div>
@@ -152,9 +152,9 @@
                     echo "<td>".$pessoa['cpf']."</td>";
                     echo "<td>".$pessoa['status_pessoas']."</td>";
                     echo "<td>".$pessoa['tipo']."</td>";
-                    echo "<td><a href='perfil.php?idpessoa=$idpessoa'><button type='submit' class='btn btn-dark btn-sm'>Ver Detalhes</button></a>";
+                    echo "<td><a href='perfil.php?idpessoa=$idpessoa'><button type='submit' class='btn btn-primary btn-sm'>Ver Detalhes</button></a>";
                     if($_SESSION['tipo']=='gerente'){
-                        echo "  <a href='apagarusuarios.php?idpessoa=$idpessoa'><button type='submit' class='btn btn-dark btn-sm'>Apagar</button></a>";
+                        echo "  <a href='apagarusuarios.php?idpessoa=$idpessoa'><button type='submit' class='btn btn-danger btn-sm'>Apagar</button></a>";
                     }
                     "</td>";
                 echo "</tr>";
